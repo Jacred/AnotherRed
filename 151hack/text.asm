@@ -1,98 +1,89 @@
 ; Texts
 
 _OakSpeechText2C::
-	text "But first, tell me"
+	text "Now then, tell me"
 	line "about yourself."
 	prompt
 
 _IntroducePlayerGender::
-	text "Are you a boy? Or"
+	text "Are you a boy, or"
 	line "are you a girl?"
 	done
 
 _IntroducePlayerName::
-	text "Let's begin with"
-	line "your name."
-	para "What is it?"
+	text "Next, what is"
+	line "your name?"
 	prompt
 	
 _ConfirmBoyText::
-	text "So, you are a"
-	line "boy. Right?"
+	text "So, you're a boy."
+	line "Is that right?"
 	done
 
 _ConfirmGirlText::
-	text "So, you are a"
-	line "girl. Right?"
+	text "So, you're a girl."
+	line "Is that right?"
 	done
 
-_AreYouREALLYSureText::
-	text "Are you really"
-	line "sure?"
-	done
-
-_EvoInstructionText::
-	text "A button: Evolve"
-	line "B button: Cancel"
-	done
-	
 _Red3dots:
-	text "start9"
+	text "RED: ..."
 	prompt
 	
 _Red12dots:
-	text "…"
-	line "…"
+	text "..."
+	line "..."
 	done
 
 _LegendaryRanText::
 	text "Wild @"
 	TX_RAM wEnemyMonNick
 	db $0
-	line "ran away!"
+	line "vanished!"
 	prompt
 	
 _ItWasJustADreamText::
-	text "Was it just"
-	line "a dream…?"
+	text "Was it all just"
+	line "a dream...?"
 	prompt
 
 _MtSilverIntroText::
-	text "Later that"
-	line "night…"
+	text "When you opened"
+	line "your eyes..."
 	prompt
 	
 _OakPreBattleText::
-	text $52, ", I've"
-	line "watched you from"
-	cont "the beginning of"
-	cont "your journey."
+	text $52, ", from the"
+	line "beginning of your"
+	cont "journey, I've kept"
+	cont "an eye on you."
 	
-	para "And I must say,"
-	line "it is truly"
-	cont "astonishing how"
-	cont "you've managed to"
-	cont "discover and tame"
-	cont "every single"
-	cont "#MON!"
+	para "I must say, it's"
+	line "incredible that"
+	cont "you've caught all"
+	cont "151 kinds of"
+	cont "#MON in such"
+	cont "a short time!"
 	
-	para "Now that you are a"
-	line "#MON MASTER,"
+	para "However, if you"
+	line "aim to be a"
+	cont "#MON MASTER,"
 	cont "you must prove to"
 	cont "me that you are"
-	cont "deserving of"
-	cont "that title."
+	cont "truly deserving"
+	cont "of that title."
 	
-	para "Please, ", $52, ","
-	line "do not hold back"
-	cont "on this one."
-	
-	para "Let us begin!"
+	para $52, "!"
+
+	para "This will be your"
+	line "ultimate test."
+
+	para "Show me what you"
+	line "have learned!"
 	done
 	
 _OakVictorySpeech::
-	text "Wow, I'm"
-	line "speechless!"
+	text "Wow!"
+	line "I'm speechless!"
 	
 	para "I guess you're as"
 	line "good as they say"
@@ -101,77 +92,77 @@ _OakVictorySpeech::
 	
 _BattleTentSignText::
 	text "BATTLE TENT"
-	line "Where trainers"
-	cont "from all over"
-	cont "come to battle!"
+	
+	para "Where trainers"
+	line "come to battle!"
 	done
 
 _SailorIslandText::
-	text "I saw that weird"
-	line "thing swim and"
-	cont "fly off just now."
+	text "I saw a mythical"
+	line "#MON fly away"
+	cont "to the south!"
 	
-	para "I was going to"
-	line "go chase after"
-	cont "it with my boat."
+	para "It must be hiding"
+	line "in a cave on that"
+	cont "FARAWAY ISLAND!"
 	
-	para "Want to come"
-	line "along?"
+	para "Want me to take"
+	line "you there?"
 	done
 	
 _SailorIslandText2::
-	text "Ok, let's go."
+	text "OK! Let's go!"
 	done
 
 _SailorIslandText3::
-	text "Well, hurry up,"
-	line "ok?"
+	text "Well, if you have"
+	line "places to be..."
 	
-	para "I don't know if"
-	line "that thing will"
-	cont "stick around."
-	done
-	
-_SailorIslandText4::
-	text "Want to go"
-	line "back?"
+	para "Just let me know"
+	line "if you change"
+	cont "your mind, OK?"
 	done
 	
 _LastIsland1FText1::
 	text "DANGER!"
-	
-	para "Holes everywhere!"
-	
-	para "Watch your step!"
+	line "Holes everywhere!"
+	cont "Watch your step!"
 	done
 	
 _PartyMenuBattleTentText::
-	text "Select which"
-	line "#MON to enter?"
+	text "Choose 3 #MON"
+	line "to enter."
 	done
 	
 RematchPrompt::
-	text "Rematch this"
-	line "trainer?"
+	text "Hm? Are you here"
+	line "for a rematch?"
 	done
 	
 INCLUDE "151hack/btlibs.asm"
 
 _EndRematchBattle_Brock::
-	text "I took"
-	line "you for granted."
+	text "Your"
+	line "powerful attacks"
+	cont "overcame my rock-"
+	cont "hard defense..."
+
+	para "You're stronger"
+	line "than I expected!"
 	prompt
 	
 _EndRematchBattle_Misty::
-	text "Wow!"
-	line "You're too much!"
+	text "You really"
+	line "are good..."
+
+	para "I'll admit that"
+	line "you are skilled!"
+
 	prompt
 	
 _EndRematchBattle_LtSurge::
-	text "Whoa!"
-
-	para "You're the real"
-	line "deal, kid!"
+	text "Arrrgh!"
+	line "You are strong!"
 	prompt
 	
 _EndRematchBattle_Erika::
@@ -179,158 +170,181 @@ _EndRematchBattle_Erika::
 	line "I concede defeat."
 
 	para "You are remarkably"
-	line "strong."
+	line "strong..."
 	prompt
 	
 _EndRematchBattle_Sabrina::
-	text "I'm"
-	line "shocked!"
-	cont "But, a loss is a"
-	cont "loss."
+	text "Your"
+	line "power..."
 
-	para "I admit I didn't"
-	line "work hard enough"
-	cont "to win!"
+	para "It far exceeds"
+	line "what I foresaw."
+
+	para "Maybe it isn't"
+	line "possible to fully"
+	cont "predict what the"
+	cont "future holds..."
+	prompt
+
+_EndRematchBattle_Koga::
+	text "Ah!"
+
+	para "You have proven"
+	line "your worth!"
 	prompt
 
 _EndRematchBattle_Blaine::
-	text "I have"
-	line "burnt out!"
+	text "Awesome."
+	line "I've burned out!"
 	prompt
 	
 _EndRematchBattle_LeaguePC::
 	text ""
-	line "BATTLE.EXE -T"
-	para "WELL DONE."
+	line "YOU WIN!"
 	prompt
 	
 _LeaguePCBeforeText::
-	text "WELCOME TO GYM"
-	line "NO. 8."
+	text "WELCOME BACK TO"
+	line "VIRIDIAN GYM."
 	
-	para "I AM A COMPUTER"
-	line "INSTALLED BY"
-	cont "BLAINE TO ALLOW"
-	cont "TRAINERS TO STILL"
-	cont "GET THEIR 8TH"
-	cont "BADGES WHILE"
-	cont "THE LEAGUE LOOKS"
-	cont "FOR A NEW GYM"
-	cont "LEADER."
+	para "THE GYM LEADER"
+	line "HAS GONE MISSING"
+	cont "AND CANNOT BATTLE"
+	cont "AT THIS TIME."
 	
-	para "MY SIMULATED TEAM"
-	line "CONSISTS OF AN"
-	cont "OPTIMAL VERSION"
-	cont "OF THE PREVIOUS"
-	cont "LEADER'S TEAM."
+	para "#MON LEAGUE"
+	line "HAS INSTALLED A"
+	cont "BATTLE SIMULATOR"
+	cont "FOR TRAINERS TO"
+	cont "EARN THEIR BADGES"
+	cont "WHILE WE SEARCH"
+	cont "FOR A NEW LEADER."
 	
-	para "IT SEEMS YOU WOULD"
-	line "LIKE A REMATCH."
+	para "AS A RETURNING"
+	line "CHALLENGER, YOU"
+	cont "ARE ENTITLED TO"
+	cont "A REMATCH."
 	
-	para "SHALL I INITIATE"
-	line "BATTLE.EXE?"
+	para "SHALL WE BEGIN?"
 	done
 	
 _LeaguePCYesText::
-	text "BATTLE.EXE -D"
-	line "GYM8LEADER.DAT"
+	text "UNDERSTOOD."
+	line "BATTLE START!"
 	done
 	
 _LeaguePCNoText::
-	text "CANCEL.EXE"
+	text "UNDERSTOOD."
+	line "SHUTTING DOWN..."
 	done
 	
 _LeaguePCAfterText::
-	text "THAT WAS AN"
-	line "OPTIMAL BATTLE"
-	cont "INDEED."
+	text "CONGRATULATIONS"
+	line "ON YOUR VICTORY!"
 	
-	para "THIS UNIT MUST"
-	line "GO INTO SLEEP"
-	cont "MODE."
+	para "PLEASE RETURN TO"
+	line "INDIGO PLATEAU"
+	cont "AFTER DEFEATING"
+	cont "ALL GYM LEADERS"
+	cont "AND OBTAINING"
+	cont "YOUR DIPLOMA."
 	
-	para "I WISH YOU"
-	line "PROSPERITY IN"
-	cont "COMPLETING YOUR"
-	cont "END GOAL."
-	
-	para "LOGOFF.EXE"
+	para "THE ELITE FOUR"
+	line "WILL BE WAITING,"
+	cont "CHAMPION ", $52, "."
 	done
 	
 _HallofFameRoomText1_tehurn::
-	text "Congratulations,"
-	line $52, ", you and"
-	cont "your #MON are"
-	cont "#MON MASTERs!"
+	text "Not only that,"
+	line "you accomplished"
+	cont "my life's dream"
+	cont "and completed the"
+	cont "#DEX!"
+
+	para "It was an honor"
+	line "to battle you,"
+	cont "with the #MON"
+	cont "I used when I"
+	cont "became champion,"
+	cont "many years ago."
+
+	para "I have to wonder,"
+	line "what will you do"
+	cont "now that you're"
+	cont "the very best?"
+
+	para "…………"
+	line "…………"
+
+	para "Hmmm... I see..."
+	line "Is that so?"
+
+	para "Well, either way,"
+	line "I'm very proud of"
+	cont "the trainer you've"
+	cont "become, ", $52, "."
+
+	para "Congratulations,"
+	line $52, "!"
+
+	para "You are truly a"
+	line "#MON MASTER!"
 	done
 	
 HackCreditsText::
 	db 1
-	db 0, "POKéMON TPP VERSION@"
-	IF HACK_VERSION % 100 == 0
-		db 6, "Patch ", (HACK_VERSION / 100 + "0"), "@"
-	ELSE IF HACK_VERSION % 10 == 0
-		db 5, "Patch ", (HACK_VERSION / 100 + "0"), ".", ((HACK_VERSION / 10) % 10 + "0"), "@"
-	ELSE
-		db 4, "Patch ", (HACK_VERSION / 100 + "0"), ".", ((HACK_VERSION / 10) % 10 + "0"), "."
-		db (HACK_VERSION % 10 + "0"), "@"
-	ENDC
-	ENDC
-	
-	db 1 ; how many bottom row texts
-	db 4, "ROM Hack by@" ; top row text, the first byte is offset
-	db 4, "pigdevil2010@" ; bottom row texts, the first byte is offset
+	db 3, $E1,$E2," RED VERSION@"
+	db 2, "25th ANNIVERSARY@"
 	
 	db 1
-	db 3, "Hack based on@"
-	db 2, "POKéMON RED 151@"
-	
+	db 5, "PROJECT BY@"
+	db 3, "JACQUES PAUGHT@"
+
 	db 1
-	db 1, "Project Management@"
-	db 4, "EliteAnax17@"
-	
-	db 3
-	db 6, "Testers@"
-	db 5, "azum4roll@"
-	db 4, "EliteAnax17@"
-	db 6, "walle303@"
-	
+	db 6, "BASED ON@"
+	db 3, $E1,$E2," TPP VERSION@"
+		
 	db 2
-	db 5, "Custom GFX@"
+	db 2, "ORIGINAL PROJECT@"
 	db 4, "pigdevil2010@"
-	db 7, "Pioxys@"
-	
-	db 1
-	db 2, "Credits Music by@"
-	db 7, "COTHC@"
+	db 4, "EliteAnax17@"
 	
 	db 2
-	db 1, "Dream Red music by@"
-	db 3, "JUNICHI MASUDA@"
-	db 5, "GO ICHINOSE@"
-	
-	db 3
-	db 2, "Final Polishing@"
+	db 2, "MISC PROGRAMMING@"
 	db 5, "Koolboyman@"
 	db 6, "walle303@"
-	db 4, "LightningXCE@"
 	
+	db 1
+	db 2, "CREDITS MUSIC BY@"
+	db 5, "C.O.T.H.C.@"
+
+	db 2
+	db 1, "DREAM RED MUSIC BY@"
+	db 3, "JUNICHI MASUDA@"
+	db 5, "GO ICHINOSE@"
+
+	db 2
+	db 5, "CUSTOM GFX@"
+	db 4, "pigdevil2010@"
+	db 7, "Pioxys@"
+
 	db 4
-	db 3, "Special Thanks@"
-	db 5, "flarn2006@"
-	db 5, "iimarckus@"
-	db 1, "TwitchPlaysPokemon@"
-	db 5, "..and you!@"
+	db 4, "PLAYTESTERS@"
+	db 6, "Jackpot@"
+	db 6, "Bionick@"
+	db 6, "Bryan D@"
+	db 8, "Yuka@"
+
+	db 4
+	db 3, "SPECIAL THANKS@"
+	db 5, "azum4roll@"
+	db 8, "pret@"
+	db 8, "/vp/@"
+	db 4, "...and you!@"
 	
 	db 1
-	db 2, "And to the many@"
-	db 2, "that donated...@"
-	
-	db 1
-	db 2, "Thanks for your@"
-	db 6, "support!@"
-	
-	; I have thanks for watching gfx, just didn't add it yet.
+	db 3, "Stay tuned for@"
+	db 2, "POKéMON CRYSTAL!@"
 	
 	db $FF
 	
