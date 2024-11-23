@@ -252,7 +252,7 @@ WildDataPointers: ; ceeb (3:4eeb)
 	dw LastIslandMons ; LastIslandB1F
 	dw LastIslandMons ; LastIsland1F
 	dw LastIslandMons ; LastIsland2F
-	dw LastIslandMons ; LastIslandSummit
+	dw NoMons ; LastIslandSummit
 	dw NoMons ; BattleTent
 	dw $FFFF
 
