@@ -1,11 +1,13 @@
 _OakSpeechText1::
 	text "Hello there!"
-	line "Welcome to the"
-	cont "world of #MON!"
+	
+	para "Welcome to the"
+	line "world of #MON!"
 
 	para "My name is OAK!"
-	line "People call me"
-	cont "the #MON PROF!"
+	
+	para "People call me"
+	line "the #MON PROF!"
 	prompt
 
 _OakSpeechText2A::
@@ -16,9 +18,10 @@ _OakSpeechText2A::
 
 _OakSpeechText2B::
 	text $51,"For some people,"
-	line "#MON are"
-	cont "pets. Others use"
-	cont "them for fights."
+	line "#MON are pets."
+
+	para "Others use them"
+	line "for fights."
 
 	para "Myself..."
 
@@ -27,15 +30,17 @@ _OakSpeechText2B::
 	prompt
 
 _IntroducePlayerText::
-	text "First, what is"
+	text "Second, what is"
 	line "your name?"
 	prompt
 
 _IntroduceRivalText::
-	text "This is my grand-"
-	line "son. He's been"
-	cont "your rival since"
-	cont "you were a baby."
+	text "This is my"
+	line "grandson."
+
+	para "He's been your"
+	line "rival since you"
+	cont "were a baby."
 
 	para "...Erm, what is"
 	line "his name again?"
