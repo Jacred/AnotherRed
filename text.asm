@@ -1980,9 +1980,11 @@ _YourNameIsText:: ; 8a62f (22:662f)
 	prompt
 
 _HisNameIsText:: ; 8a64a (22:664a)
-	text "That's right! I"
-	line "remember now! His"
-	cont "name is ", $53, "!"
+	text "That's right!"
+	line "I remember now!"
+	
+	para "His name is"
+	line $53, "!"
 	prompt
 
 _WillBeTradedText:: ; 8a677 (22:6677)
