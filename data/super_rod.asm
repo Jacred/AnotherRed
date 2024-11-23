@@ -40,62 +40,251 @@ SuperRodData: ; e919 (3:6919)
 ; fishing groups
 ; number of monsters, followed by level/monster pairs
 FishingGroup1: ; e97d (3:697d)
-	db 2
-	db 15,TENTACOOL
-	db 15,POLIWAG
+	db 20
+	db 30,POLIWAG ; 50% Poliwag (x10)
+	db 30,POLIWAG ; 35% Tentacool (x7)
+	db 30,POLIWAG ; 15% Staryu (x3)
+	db 30,POLIWAG
+	db 30,POLIWAG
+	db 30,POLIWAG
+	db 30,POLIWAG
+	db 30,POLIWAG
+	db 30,POLIWAG
+	db 30,POLIWAG
+	db 30,TENTACOOL
+	db 30,TENTACOOL
+	db 30,TENTACOOL
+	db 30,TENTACOOL
+	db 30,TENTACOOL
+	db 30,TENTACOOL
+	db 30,TENTACOOL
+	db 30,STARYU
+	db 30,STARYU
+	db 30,STARYU
 
 FishingGroup2: ; e982 (3:6982)
-	db 2
-	db 15,GOLDEEN
-	db 15,POLIWAG
+	db 20
+	db 30,POLIWAG ; 70% Poliwag (x14)
+	db 30,POLIWAG ; 25% Goldeen (x5)
+	db 30,POLIWAG ; 5% Poliwhirl (x1)
+	db 30,POLIWAG
+	db 30,POLIWAG
+	db 30,POLIWAG
+	db 30,POLIWAG
+	db 30,POLIWAG
+	db 30,POLIWAG
+	db 30,POLIWAG
+	db 30,POLIWAG
+	db 30,POLIWAG
+	db 30,POLIWAG	
+	db 30,POLIWAG	
+	db 30,GOLDEEN	
+	db 30,GOLDEEN	
+	db 30,GOLDEEN	
+	db 30,GOLDEEN	
+	db 30,GOLDEEN	
+	db 45,POLIWHIRL
 
 FishingGroup3: ; e987 (3:6987)
-	db 3
-	db 15,PSYDUCK
-	db 15,GOLDEEN
-	db 15,KRABBY
+	db 24
+	db 30,GOLDEEN ; 50% Goldeen (x12)
+	db 30,GOLDEEN ; 25% Krabby (x6)
+	db 30,GOLDEEN ; 16.666...% Psyduck (x4)
+	db 30,GOLDEEN ; 4.1666...% Seaking (x1)
+	db 30,GOLDEEN ; 4.1666...% Kingler (x1)
+	db 30,GOLDEEN
+	db 30,GOLDEEN
+	db 30,GOLDEEN
+	db 30,GOLDEEN
+	db 30,GOLDEEN
+	db 30,GOLDEEN
+	db 30,GOLDEEN
+	db 30,KRABBY
+	db 30,KRABBY
+	db 30,KRABBY
+	db 30,KRABBY
+	db 30,KRABBY
+	db 30,KRABBY
+	db 30,PSYDUCK
+	db 30,PSYDUCK
+	db 30,PSYDUCK
+	db 30,PSYDUCK
+	db 45,SEAKING
+	db 45,KINGLER
 
 FishingGroup4: ; e98e (3:698e)
-	db 2
-	db 15,KRABBY
-	db 15,SHELLDER
+	db 32
+	db 30,TENTACOOL ; 31.25% Tentacool (x10)
+	db 30,TENTACOOL ; 25% Shellder (x8)
+	db 30,TENTACOOL ; 25% Krabby (x8)
+	db 30,TENTACOOL ; 12.5% Goldeen (x4)
+	db 30,TENTACOOL ; 3.125% Horsea (x1)
+	db 30,TENTACOOL ; 3.125% Staryu (x1)
+	db 30,TENTACOOL
+	db 30,TENTACOOL
+	db 30,TENTACOOL
+	db 30,TENTACOOL
+	db 30,SHELLDER
+	db 30,SHELLDER
+	db 30,SHELLDER
+	db 30,SHELLDER
+	db 30,SHELLDER
+	db 30,SHELLDER
+	db 30,SHELLDER
+	db 30,SHELLDER
+	db 30,KRABBY
+	db 30,KRABBY
+	db 30,KRABBY
+	db 30,KRABBY
+	db 30,KRABBY
+	db 30,KRABBY
+	db 30,KRABBY
+	db 30,KRABBY
+	db 30,GOLDEEN
+	db 30,GOLDEEN
+	db 30,GOLDEEN
+	db 30,GOLDEEN
+	db 30,HORSEA
+	db 30,STARYU
 
 FishingGroup5: ; e993 (3:6993)
-	db 2
-	db 23,POLIWHIRL
-	db 15,SLOWPOKE
+	db 40		
+	db 45,POLIWHIRL ; 25% Poliwhirl (x10)
+	db 45,POLIWHIRL ; 25% Slowpoke (x10)
+	db 45,POLIWHIRL ; 25% Goldeen (x10)
+	db 45,POLIWHIRL ; 17.5% Krabby (x7)
+	db 45,POLIWHIRL ; 5% Horsea (x2)
+	db 45,POLIWHIRL ; 2.5% Kingler (x1)
+	db 45,POLIWHIRL
+	db 45,POLIWHIRL
+	db 45,POLIWHIRL
+	db 45,POLIWHIRL
+	db 30,SLOWPOKE
+	db 30,SLOWPOKE
+	db 30,SLOWPOKE
+	db 30,SLOWPOKE
+	db 30,SLOWPOKE
+	db 30,SLOWPOKE
+	db 30,SLOWPOKE
+	db 30,SLOWPOKE
+	db 30,SLOWPOKE
+	db 30,SLOWPOKE
+	db 30,GOLDEEN
+	db 30,GOLDEEN
+	db 30,GOLDEEN
+	db 30,GOLDEEN
+	db 30,GOLDEEN
+	db 30,GOLDEEN
+	db 30,GOLDEEN
+	db 30,GOLDEEN
+	db 30,GOLDEEN
+	db 30,GOLDEEN
+	db 30,KRABBY
+	db 30,KRABBY
+	db 30,KRABBY
+	db 30,KRABBY
+	db 30,KRABBY
+	db 30,KRABBY
+	db 30,KRABBY
+	db 30,HORSEA
+	db 30,HORSEA
+	db 45,KINGLER
 
 FishingGroup6: ; e998 (3:6998)
-	db 4
-	db 15,DRATINI
-	db 15,KRABBY
-	db 15,PSYDUCK
-	db 15,SLOWPOKE
+	db 16
+	db 30,MAGIKARP ; 42.5% Magikarp (x7)
+	db 30,MAGIKARP ; 20% Dratini (x3)
+	db 30,MAGIKARP ; 12.5% Krabby (x2)
+	db 30,MAGIKARP ; 12.5% Psyduck (x2)
+	db 30,MAGIKARP ; 12.5% Slowpoke (x2)
+	db 30,MAGIKARP
+	db 30,MAGIKARP
+	db 30,DRATINI
+	db 30,DRATINI
+	db 30,DRATINI
+	db 30,KRABBY
+	db 30,KRABBY
+	db 30,PSYDUCK
+	db 30,PSYDUCK
+	db 30,SLOWPOKE
+	db 30,SLOWPOKE
 
 FishingGroup7: ; e9a1 (3:69a1)
-	db 4
-	db 5,TENTACOOL
-	db 15,KRABBY
-	db 15,GOLDEEN
-	db 15,MAGIKARP
+	db 16
+	db 30,TENTACOOL ; 25% Tentacool (x4)
+	db 30,TENTACOOL ; 18.75% Horsea (x3)
+	db 30,TENTACOOL ; 12.5% Krabby (x2)
+	db 30,TENTACOOL ; 12.5% Goldeen (x2)
+	db 30,HORSEA    ; 12.5% Magikarp (x2)
+	db 30,HORSEA    ; 12.5% Shellder (x2)
+	db 30,HORSEA    ; 6.25% Seadra (x1)
+	db 30,KRABBY
+	db 30,KRABBY
+	db 30,GOLDEEN
+	db 30,GOLDEEN
+	db 30,MAGIKARP
+	db 30,MAGIKARP
+	db 40,SHELLDER
+	db 40,SHELLDER
+	db 45,SEADRA
 
 FishingGroup8: ; e9aa (3:69aa)
-	db 4
-	db 15,STARYU
-	db 15,HORSEA
-	db 15,SHELLDER
-	db 15,GOLDEEN
+	db 24
+	db 40,STARYU    ; 29.1666...% Staryu (x7)
+	db 40,STARYU    ; 16.666...% Tentacool (x4)
+	db 40,STARYU    ; 12.5% Horsea (x3)
+	db 40,STARYU    ; 12.5% Shellder (x3)
+	db 40,STARYU    ; 12.5% Goldeen (x3)
+	db 40,STARYU    ; 8.333...% Krabby (x2)
+	db 40,STARYU    ; 4.1666...% Tentacruel (x1)
+	db 30,TENTACOOL ; 4.1666...% Kingler (x1)
+	db 30,TENTACOOL
+	db 30,TENTACOOL
+	db 30,TENTACOOL
+	db 30,HORSEA
+	db 30,HORSEA
+	db 30,HORSEA
+	db 30,SHELLDER
+	db 30,SHELLDER
+	db 30,SHELLDER
+	db 30,GOLDEEN
+	db 30,GOLDEEN
+	db 30,GOLDEEN
+	db 30,KRABBY
+	db 30,KRABBY
+	db 45,TENTACRUEL
+	db 45,KINGLER
 
 FishingGroup9: ; e9b3 (3:69b3)
-	db 4
-	db 23,SLOWBRO
-	db 23,SEAKING
-	db 23,KINGLER
-	db 23,SEADRA
+	db 8
+	db 45,SEAKING   ; 50% Seaking (x4)
+	db 50,SEAKING   ; 12.5% Slowbro (x1)
+	db 55,SEAKING   ; 12.5% Kingler (x1)
+	db 60,SEAKING   ; 12.5% Seadra (x1)
+	db 45,POLIWHIRL ; 12.5% Poliwhirl (x1)
+	db 45,SLOWBRO
+	db 45,KINGLER
+	db 45,SEADRA
 
 FishingGroup10: ; e9bc (3:69bc)
-	db 4
-	db 23,SEAKING
-	db 15,KRABBY
-	db 15,GOLDEEN
-	db 15,MAGIKARP
+	db 20
+	db 30,MAGIKARP ; 50% Magikarp (x10)
+	db 30,MAGIKARP ; 15% Seaking (x3)
+	db 30,MAGIKARP ; 15% Krabby (x3)
+	db 30,MAGIKARP ; 15% Goldeen (x3)
+	db 30,MAGIKARP ; 5% Gyarados (x1)
+	db 30,MAGIKARP
+	db 30,MAGIKARP
+	db 30,MAGIKARP
+	db 30,MAGIKARP
+	db 30,MAGIKARP
+	db 45,SEAKING
+	db 45,SEAKING
+	db 45,SEAKING
+	db 30,KRABBY
+	db 30,KRABBY
+	db 30,KRABBY
+	db 30,GOLDEEN
+	db 30,GOLDEEN
+	db 30,GOLDEEN
+	db 30,GYARADOS
