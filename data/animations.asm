@@ -295,8 +295,8 @@ WingAttackAnim: ; 7a277 (1e:6277)
 	db $FF
 
 WhirlwindAnim: ; 7a27b (1e:627b)
-	db $46,$11,$10
-	db SE_SLIDE_ENEMY_MON_OUT, $FF
+	db $46,$0F,$10
+	db $06,$FF,$02
 	db $FF
 
 FlyAnim: ; 7a281 (1e:6281)
