@@ -27,7 +27,7 @@ CryData: ; 39446 (e:5446)
 	db $1C, $00, $80; Gastly
 	db $16, $00, $80; Scyther
 	db $1E, $02, $20; Staryu
-	db $13, $00, $80; Blastoise
+	db $1D, $00, $80; Blastoise
 	db $14, $00, $80; Pinsir
 	db $12, $00, $80; Tangela
 	db $00, $00, $00; MissingNo.
