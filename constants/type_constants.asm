@@ -8,7 +8,7 @@ ROCK     EQU $05
 STATUS   EQU $06
 BUG      EQU $07
 GHOST    EQU $08
-DARK	   EQU $09
+DARK     EQU $09
 
 FIRE     EQU $14
 WATER    EQU $15
