@@ -19,17 +19,17 @@ MonPartyData: ; 7190d (1c:590d)
 	dn SPRITE_FAIRY, SPRITE_FAIRY			;Clefairy/Clefable
 	dn SPRITE_QUADRUPED, SPRITE_QUADRUPED	;Vulpix/Ninetales
 	dn SPRITE_FAIRY, SPRITE_FAIRY			;Jigglypuff/Wigglytuff
-	dn SPRITE_MON, SPRITE_MON				;Zubat/Golbat
+	dn SPRITE_BIRD_M, SPRITE_BIRD_M				;Zubat/Golbat
 	dn SPRITE_GRASS, SPRITE_GRASS			;Oddish/Gloom
 	dn SPRITE_GRASS, SPRITE_BUG				;Vileplume/Paras
 	dn SPRITE_BUG, SPRITE_BUG				;Parasect/Venonat
 	dn SPRITE_BUG, SPRITE_MON				;Venomoth/Diglett
 	dn SPRITE_MON, SPRITE_MON				;Dugtrio/Meowth
-	dn SPRITE_MON, SPRITE_MON				;Persian/Psyduck
+	dn SPRITE_QUADRUPED, SPRITE_MON				;Persian/Psyduck
 	dn SPRITE_MON, SPRITE_MON				;Golduck/Mankey
 	dn SPRITE_MON, SPRITE_QUADRUPED			;Primeape/Growlithe
-	dn SPRITE_QUADRUPED, SPRITE_MON			;Arcanine/Poliwag
-	dn SPRITE_MON, SPRITE_MON				;Poliwhirl/Poliwrath
+	dn SPRITE_QUADRUPED, SPRITE_WATER			;Arcanine/Poliwag
+	dn SPRITE_WATER, SPRITE_WATER				;Poliwhirl/Poliwrath
 	dn SPRITE_MON, SPRITE_MON				;Abra/Kadabra
 	dn SPRITE_MON, SPRITE_MON				;Alakazam/Machop
 	dn SPRITE_MON, SPRITE_MON				;Machoke/Machamp
@@ -37,8 +37,8 @@ MonPartyData: ; 7190d (1c:590d)
 	dn SPRITE_GRASS, SPRITE_WATER			;Victreebel/Tentacool
 	dn SPRITE_WATER, SPRITE_MON				;Tentacruel/Geodude
 	dn SPRITE_MON, SPRITE_MON				;Graveler/Golem
-	dn SPRITE_QUADRUPED, SPRITE_QUADRUPED	;Ponyta/Rapidash
-	dn SPRITE_QUADRUPED, SPRITE_MON			;Slowpoke/Slowbro
+	dn SPRITE_QUADRUPED, SPRITE_QUADRUPED		;Ponyta/Rapidash
+	dn SPRITE_MON, SPRITE_MON			;Slowpoke/Slowbro
 	dn SPRITE_BALL_M, SPRITE_BALL_M			;Magnemite/Magneton
 	dn SPRITE_BIRD_M, SPRITE_BIRD_M			;Farfetch'd/Doduo
 	dn SPRITE_BIRD_M, SPRITE_WATER			;Dodrio/Seel
@@ -47,8 +47,8 @@ MonPartyData: ; 7190d (1c:590d)
 	dn SPRITE_HELIX, SPRITE_MON				;Cloyster/Gastly
 	dn SPRITE_MON, SPRITE_MON				;Haunter/Gengar
 	dn SPRITE_SNAKE, SPRITE_MON				;Onix/Drowzee
-	dn SPRITE_MON, SPRITE_WATER				;Hypno/Krabby
-	dn SPRITE_WATER, SPRITE_BALL_M			;Kingler/Voltorb
+	dn SPRITE_MON, SPRITE_HELIX				;Hypno/Krabby
+	dn SPRITE_HELIX, SPRITE_BALL_M			;Kingler/Voltorb
 	dn SPRITE_BALL_M, SPRITE_GRASS			;Electrode/Exeggcute
 	dn SPRITE_GRASS, SPRITE_MON				;Exeggutor/Cubone
 	dn SPRITE_MON, SPRITE_MON				;Marowak/Hitmonlee
@@ -67,11 +67,11 @@ MonPartyData: ; 7190d (1c:590d)
 	dn SPRITE_WATER, SPRITE_MON				;Lapras/Ditto
 	dn SPRITE_QUADRUPED, SPRITE_QUADRUPED	;Eevee/Vaporeon
 	dn SPRITE_QUADRUPED, SPRITE_QUADRUPED	;Jolteon/Flareon
-	dn SPRITE_MON, SPRITE_HELIX				;Porygon/Omanyte
+	dn SPRITE_BALL_M, SPRITE_HELIX				;Porygon/Omanyte
 	dn SPRITE_HELIX, SPRITE_HELIX			;Omastar/Kabuto
 	dn SPRITE_HELIX, SPRITE_BIRD_M			;Kabutops/Aerodactyl
-	dn SPRITE_MON, SPRITE_BIRD_M			;Snorlax/Articuno
+	dn SPRITE_FAIRY, SPRITE_BIRD_M			;Snorlax/Articuno
 	dn SPRITE_BIRD_M, SPRITE_BIRD_M			;Zapdos/Moltres
 	dn SPRITE_SNAKE, SPRITE_SNAKE			;Dratini/Dragonair
-	dn SPRITE_SNAKE, SPRITE_MON				;Dragonite/Mewtwo
+	dn SPRITE_MON, SPRITE_MON				;Dragonite/Mewtwo
 	dn SPRITE_MON, 0						;Mew/Padding
