@@ -44,7 +44,7 @@ MapSongBanks: ; c04d (3:404d)
 	db MUSIC_POKECENTER, BANK(Music_Pokecenter) ; ViridianMart
 	db MUSIC_CITIES1, BANK(Music_Cities1) ; School
 	db MUSIC_CITIES1, BANK(Music_Cities1) ; ViridianHouse
-	db MUSIC_GYM, BANK(Music_Gym) ; ViridianGym
+	db MUSIC_DUNGEON1, BANK(Music_Dungeon1) ; ViridianGym
 	db MUSIC_DUNGEON2, BANK(Music_Dungeon2) ; DiglettsCaveRoute2
 	db MUSIC_CITIES1, BANK(Music_Cities1) ; ViridianForestExit
 	db MUSIC_CITIES1, BANK(Music_Cities1) ; Route2House
@@ -82,7 +82,7 @@ MapSongBanks: ; c04d (3:404d)
 	db MUSIC_CITIES1, BANK(Music_Cities1) ; UndergroundPathEntranceRoute8
 	db MUSIC_POKECENTER, BANK(Music_Pokecenter) ; RockTunnelPokecenter
 	db MUSIC_DUNGEON3, BANK(Music_Dungeon3) ; RockTunnel1
-	db MUSIC_DUNGEON1, BANK(Music_Dungeon1) ; PowerPlant
+	db MUSIC_SILPH_CO, BANK(Music_SilphCo) ; PowerPlant
 	db MUSIC_VERMILION, BANK(Music_Vermilion) ; Route11Gate
 	db MUSIC_DUNGEON2, BANK(Music_Dungeon2) ; DiglettsCaveEntranceRoute11
 	db MUSIC_VERMILION, BANK(Music_Vermilion) ; Route11GateUpstairs
@@ -176,7 +176,7 @@ MapSongBanks: ; c04d (3:404d)
 	db MUSIC_INDIGO_PLATEAU, BANK(Music_IndigoPlateau) ; IndigoPlateauLobby
 	db MUSIC_CITIES1, BANK(Music_Cities1) ; CopycatsHouse1F
 	db MUSIC_CITIES1, BANK(Music_Cities1) ; CopycatsHouse2F
-	db MUSIC_CITIES1, BANK(Music_Cities1) ; FightingDojo
+	db MUSIC_GYM, BANK(Music_Gym) ; FightingDojo
 	db MUSIC_GYM, BANK(Music_Gym) ; SaffronGym
 	db MUSIC_CITIES1, BANK(Music_Cities1) ; SaffronHouse1
 	db MUSIC_POKECENTER, BANK(Music_Pokecenter) ; SaffronMart
@@ -192,7 +192,7 @@ MapSongBanks: ; c04d (3:404d)
 	db MUSIC_CITIES1, BANK(Music_Cities1) ; Route18Gate
 	db MUSIC_CITIES1, BANK(Music_Cities1) ; Route18GateUpstairs
 	db MUSIC_DUNGEON2, BANK(Music_Dungeon2) ; SeafoamIslands1
-	db MUSIC_DUNGEON2, BANK(Music_Dungeon2) ; Route22Gate
+	db MUSIC_DUNGEON2, BANK(Music_IndigoPlateau) ; Route22Gate
 	db MUSIC_DUNGEON3, BANK(Music_Dungeon3) ; VictoryRoad2
 	db MUSIC_CITIES1, BANK(Music_Cities1) ; Route12GateUpstairs
 	db MUSIC_VERMILION, BANK(Music_Vermilion) ; VermilionHouse3
@@ -248,9 +248,9 @@ MapSongBanks: ; c04d (3:404d)
 	db MUSIC_DUNGEON1, BANK(Music_Dungeon1) ; Bruno
 	db MUSIC_POKEMON_TOWER, BANK(Music_PokemonTower) ; Agatha
 	db MUSIC_SILENCE, BANK(Music_Silence) ; test
-	db MUSIC_INDIGO_PLATEAU, BANK(Music_IndigoPlateau) ; LastIslandOutside
-	db MUSIC_SILPH_CO, BANK(Music_SilphCo) ; LastIslandB1F
-	db MUSIC_SILPH_CO, BANK(Music_SilphCo) ; LastIsland1F
-	db MUSIC_SILPH_CO, BANK(Music_SilphCo) ; LastIsland2F
-	db MUSIC_SILPH_CO, BANK(Music_SilphCo) ; LastIslandSummit
+	db MUSIC_CINNABAR_MANSION, BANK(Music_CinnabarMansion) ; LastIslandOutside
+	db MUSIC_CINNABAR_MANSION, BANK(Music_CinnabarMansion) ; LastIslandB1F
+	db MUSIC_CINNABAR_MANSION, BANK(Music_CinnabarMansion) ; LastIsland1F
+	db MUSIC_CINNABAR_MANSION, BANK(Music_CinnabarMansion) ; LastIsland2F
+	db MUSIC_CINNABAR_MANSION, BANK(Music_CinnabarMansion) ; LastIslandSummit
 	db MUSIC_GYM, BANK(Music_Gym) ; BattleTent
