@@ -116,25 +116,25 @@ TrainerNamePointers: ; 27e64 (9:7e64)
 	dw W_TRAINERNAME
 
 YoungsterName: ; 27ec2 (9:7ec2)
-	db "YOUNGSTER@"
+	db "LAD@"
 BugCatcherName: ; 27ecc (9:7ecc)
-	db "BUG CATCHER@"
+	db "BUG BOY@"
 LassName: ; 27ed8 (9:7ed8)
 	db "LASS@"
 JrTrainerMName: ; 27edd (9:7edd)
-	db "JR.TRAINER♂@"
+	db "SCOUT♂@"
 JrTrainerFName: ; 27ee9 (9:7ee9)
-	db "JR.TRAINER♀@"
+	db "SCOUT♀@"
 PokemaniacName: ; 27ef5 (9:7ef5)
-	db "POKéMANIAC@"
+	db "MANIAC@"
 SuperNerdName: ; 27f00 (9:7f00)
-	db "SUPER NERD@"
+	db "NERD@"
 BurglarName: ; 27f0b (9:7f0b)
 	db "BURGLAR@"
 EngineerName: ; 27f13 (9:7f13)
 	db "ENGINEER@"
 JugglerXName: ; 27f1c (9:7f1c)
-	db "JUGGLER@"
+	db "TRAINER@"
 SwimmerName: ; 27f24 (9:7f24)
 	db "SWIMMER@"
 BeautyName: ; 27f2c (9:7f2c)
@@ -150,13 +150,13 @@ ProfOakName: ; 27f4c (9:7f4c)
 ChiefName: ; 27f55 (9:7f55)
 	db "CHIEF@"
 ScientistName: ; 27f5b (9:7f5b)
-	db "SCIENTIST@"
+	db "R&D@"
 RocketName: ; 27f65 (9:7f65)
 	db "ROCKET@"
 CooltrainerMName: ; 27f6c (9:7f6c)
-	db "COOLTRAINER♂@"
+	db "ELITE♂@"
 CooltrainerFName: ; 27f79 (9:7f79)
-	db "COOLTRAINER♀@"
+	db "ELITE♀@"
 
 FocusEnergyEffect_: ; 27f86 (9:7f86)
 	ld hl, W_PLAYERBATTSTATUS2 ; W_PLAYERBATTSTATUS2
