@@ -266,7 +266,7 @@ StatusAilmentMoveEffects ; 57e2
 ; slightly encourage moves with specific effects
 AIMoveChoiceModification2: ; 397e7 (e:57e7)
 	ld a, [wccd5]
-	cp $1
+	cp $0
 	ret nz
 	ld hl, wBuffer - 1  ; temp move selection array (-1 byte offest)
 	ld de, wEnemyMonMoves  ; enemy moves
@@ -386,7 +386,7 @@ ReadMove: ; 39884 (e:5884)
 ; move choice modification methods that are applied for each trainer class
 ; 0 is sentinel value
 TrainerClassMoveChoiceModifications: ; 3989b (e:589b)
-	db 0      ; YOUNGSTER
+	db 1,0    ; YOUNGSTER
 	db 1,0    ; BUG CATCHER
 	db 1,0    ; LASS
 	db 1,3,0  ; SAILOR
@@ -401,7 +401,7 @@ TrainerClassMoveChoiceModifications: ; 3989b (e:589b)
 	db 1,2,0  ; JUGGLER_X
 	db 1,3,0  ; FISHER
 	db 1,3,0  ; SWIMMER
-	db 0      ; CUE_BALL
+	db 1,0    ; CUE_BALL
 	db 1,0    ; GAMBLER
 	db 1,3,0  ; BEAUTY
 	db 1,2,0  ; PSYCHIC_TR
@@ -411,15 +411,15 @@ TrainerClassMoveChoiceModifications: ; 3989b (e:589b)
 	db 1,0    ; BIRD_KEEPER
 	db 1,0    ; BLACKBELT
 	db 1,0    ; SONY1
-	db 1,3,0  ; PROF_OAK
+	db 1,2,3,0; PROF_OAK
 	db 1,2,0  ; CHIEF
 	db 1,2,0  ; SCIENTIST
 	db 1,3,0  ; GIOVANNI
 	db 1,0    ; ROCKET
 	db 1,3,0  ; COOLTRAINER_M
 	db 1,3,0  ; COOLTRAINER_F
-	db 1,0    ; BRUNO
-	db 1,0    ; BROCK
+	db 1,3,0  ; BRUNO
+	db 1,3,0  ; BROCK
 	db 1,3,0  ; MISTY
 	db 1,3,0  ; LT__SURGE
 	db 1,3,0  ; ERIKA
@@ -433,8 +433,8 @@ TrainerClassMoveChoiceModifications: ; 3989b (e:589b)
 	db 1,0    ; CHANNELER
 	db 1,0    ; AGATHA
 	db 1,3,0  ; LANCE
-	db 0      ; TPPRED
-	db 1,3,0  ; LEAGUES_PC
+	db 1,2,3,0; TPPRED
+	db 1,2,3,0; LEAGUES_PC
 
 TrainerPicAndMoneyPointers: ; 39914 (e:5914)
 ; trainer pic pointers and base money.
@@ -857,7 +857,7 @@ ReadTrainer: ; 39c53 (e:5c53)
 ; eeveelutions
 	ld a,[W_RIVALSTARTER]
 	cp STARTER3
-	ld b,MEGA_DRAIN
+	ld b,BODY_SLAM
 	jr z,.GiveStarterMove
 	cp STARTER1
 	ld b,FIRE_BLAST
@@ -935,175 +935,459 @@ TrainerAIPointers: ; 3a55c (e:655c)
 ; one entry per trainer class
 ; first byte, number of times (per Pokémon) it can occur
 ; next two bytes, pointer to AI subroutine for trainer class
-	dbw 3,GenericAI
-	dbw 3,GenericAI
-	dbw 3,GenericAI
-	dbw 3,GenericAI
-	dbw 3,GenericAI
-	dbw 3,GenericAI
-	dbw 3,GenericAI
-	dbw 3,GenericAI
-	dbw 3,GenericAI
-	dbw 3,GenericAI
-	dbw 3,GenericAI
-	dbw 3,GenericAI
-	dbw 3,JugglerAI ; juggler_x
-	dbw 3,GenericAI
-	dbw 3,GenericAI
-	dbw 3,GenericAI
-	dbw 3,GenericAI
-	dbw 3,GenericAI
-	dbw 3,GenericAI
-	dbw 3,GenericAI
-	dbw 3,JugglerAI ; juggler
-	dbw 3,GenericAI
-	dbw 3,GenericAI
-	dbw 2,BlackbeltAI ; blackbelt
-	dbw 3,GenericAI
-	dbw 3,GenericAI
-	dbw 1,GenericAI ; chief
-	dbw 3,GenericAI
-	dbw 1,GiovanniAI ; giovanni
-	dbw 3,GenericAI
-	dbw 2,CooltrainerMAI ; cooltrainerm
-	dbw 1,CooltrainerFAI ; cooltrainerf
-	dbw 2,BrunoAI ; bruno
-	dbw 5,BrockAI ; brock
-	dbw 1,MistyAI ; misty
-	dbw 1,LtSurgeAI ; surge
-	dbw 1,ErikaAI ; erika
-	dbw 2,KogaAI ; koga
-	dbw 2,BlaineAI ; blaine
-	dbw 1,SabrinaAI ; sabrina
-	dbw 3,GenericAI
-	dbw 1,Sony2AI ; sony2
-	dbw 1,Sony3AI ; sony3
-	dbw 2,LoreleiAI ; lorelei
-	dbw 3,GenericAI
-	dbw 2,AgathaAI ; agatha
-	dbw 1,LanceAI ; lance
-	dbw 1,GenericAI ; tpp red
-	dbw 1,GiovanniAI ; giovanni sim
+	dbw 1,GenericAI		; YOUNGSTER
+	dbw 1,GenericAI		; BUG CATCHER
+	dbw 1,GenericAI		; LASS
+	dbw 1,SailorAI		; SAILOR
+	dbw 1,ScoutAI		; SCOUT♂
+	dbw 1,ScoutAI		; SCOUT♀
+	dbw 2,PokemaniacAI	; POKéMANIAC
+	dbw 2,SuperNerdAI	; SUPER NERD
+	dbw 1,GenericAI		; HIKER
+	dbw 1,BikerAI		; BIKER
+	dbw 2,BurglarAI		; BURGLAR
+	dbw 2,EngineerAI	; ENGINEER
+	dbw 1,GenericAI		; unused
+	dbw 1,GenericAI		; FISHER
+	dbw 1,SwimmerAI		; SWIMMER
+	dbw 1,GenericAI		; CUE BALL
+	dbw 1,GamblerAI		; GAMBLER
+	dbw 1,SwimmerAI		; BEAUTY
+	dbw 2,PsychicAI		; PSYCHIC
+	dbw 1,RockerAI		; ROCKER
+	dbw 1,JugglerAI		; JUGGLER
+	dbw 2,TamerAI		; TAMER
+	dbw 1,BirdkeeperAI	; BIRDKEEPER
+	dbw 2,BlackbeltAI	; BLACKBELT
+	dbw 1,Rival1AI		; RIVAL1
+	dbw 1,ProfOakAI		; PROF.OAK
+	dbw 1,GenericAI		; unused
+	dbw 2,ScientistAI	; SCIENTIST
+	dbw 1,GiovanniAI	; GIOVANNI
+	dbw 1,RocketAI		; ROCKET
+	dbw 1,CooltrainerAI	; COOLTRAINER♂
+	dbw 1,CooltrainerAI	; COOLTRAINER♀
+	dbw 4,BrunoAI		; BRUNO
+	dbw 6,BrockAI		; BROCK
+	dbw 2,MistyAI 		; MISTY
+	dbw 6,LtSurgeAI 	; LT.SURGE
+	dbw 2,ErikaAI 		; ERIKA
+	dbw 6,KogaAI 		; KOGA
+	dbw 2,BlaineAI 		; BLAINE
+	dbw 4,SabrinaAI 	; SABRINA
+	dbw 1,GentlemanAI	; GENTLEMAN
+	dbw 1,Rival2AI 		; RIVAL2
+	dbw 2,Rival3AI 		; RIVAL3
+	dbw 1,LoreleiAI 	; LORELEI
+	dbw 1,GenericAI 	; CHANNELER
+	dbw 2,AgathaAI 		; AGATHA
+	dbw 3,LanceAI 		; LANCE
+	dbw 8,DreamRedAI 	; DREAM RED
+	dbw 6,LeaguePCAI 	; LEAGUE's PC
+
+SailorAI:
+	cp $55			; 33% chance
+	ret nc
+	jp AIUseXDefend		; use X DEFEND
+
+ScoutAI:
+	cp $20			; 12.5% chance
+	ret nc
+	ld a,$A			; if HP < 10%
+	call Func_3a7cf
+	jp c,AIUseSuperPotion	; use SUPER POTION
+	ld a,5			; if HP < 20%
+	call Func_3a7cf
+	ret nc
+	jp Func_3a72a		; switch out
+
+PokemaniacAI:
+	cp $40			; 25% chance
+	ld a,3			; if HP < 33%
+	call Func_3a7cf
+	ret nc
+	jp c,Func_3a72a		; switch out
+	cp $80			; 25% chance
+	ret nc
+	ld a,[wEnemyMonStatus]	; if active monster has a status ailment
+	and a
+	ret z
+	jp Func_3a72a		; switch out
+
+SuperNerdAI: 
+	cp $20			
+	jp c,Func_3a72a		; 12.5% chance to switch out
+	cp $40			
+	ret nc
+	ld a,2			; if HP < 50%
+	call Func_3a7cf
+	ret nc
+	jp Func_3a72a		; 25% chance to switch out
+	cp $80			
+	ret nc
+	ld a,5			; if HP < 20%
+	call Func_3a7cf
+	ret nc
+	jp Func_3a72a		; 50% chance to switch out
+
+BikerAI:
+	cp $55			; 33% chance
+	ret nc
+	jp AIUseXSpeed		; use X SPEED
+
+BurglarAI:
+	cp $40			; 25% chance
+	ret nc
+	ld a,2			; if HP < 50%
+	call Func_3a7cf
+	ret nc
+	jp AIUseSuperPotion	; use SUPER POTION
+
+EngineerAI:
+	cp $40			; 25% chance to use X DEFEND
+	jp c,AIUseXDefend
+	cp $80			; 25% chance
+	ret nc
+	ld a,5			; if HP < 20%
+	call Func_3a7cf
+	ret nc
+	jp AIUseSuperPotion	; use SUPER POTION
+
+SwimmerAI: 
+	cp $20			; 12.5% chance
+	ret nc
+	ld a,2			; if HP < 50%
+	call Func_3a7cf
+	ret nc
+	jp AIUseFreshWater	; use FRESH WATER
+
+GamblerAI:
+	cp $80			; 50% chance
+	ret nc
+	jp AIUseDireHit		; use DIRE HIT
+
+PsychicAI: ; 3a601 (e:6601)
+	ld a,[wEnemyMonStatus]
+	and a
+	jp c,AIUseFullHeal	; if afflicted with status, use FULL HEAL
+	ld a,5	
+	call Func_3a7cf
+	jp c,AIUseHyperPotion	; if HP < 20%, use HYPER POTION
+	cp $20			
+	jp c,Func_3a72a		; 12.5% chance to switch out
+	cp $40			
+	ret nc
+	ld a,2			; if HP < 50%
+	call Func_3a7cf
+	ret nc
+	jp Func_3a72a		; 25% chance to switch out
+	cp $80			
+	ret nc
+	ld a,5			; if HP < 20%
+	call Func_3a7cf
+	ret nc
+	jp Func_3a72a		; 50% chance to switch out
+
+RockerAI: 
+	cp $55			; 33% chance
+	ret nc
+	jp AIUseXSpecial	; use X SPECIAL
 
 JugglerAI: ; 3a5e9 (e:65e9)
-	cp $40
+	cp $55			; 33% chance
 	ret nc
-	jp Func_3a72a
+	jp Func_3a72a		; switch out
 
-BlackbeltAI: ; 3a5ef (e:65ef)
-	cp $20
+TamerAI: ; 3a5ef (e:65ef)
+	cp $30			; 18.75% chance
+	jp c,AIUseXAttack	; use X ATTACK
+	cp $40			; 6.25% chance
 	ret nc
-	jp AIUseXAttack
+	jp AIUseXSpeed		; use X SPEED
+
+BirdkeeperAI: 
+	cp $20			; 12.5% chance
+	ret nc
+	jp AIUseXEvasion	; use X EVASION
+
+BlackbeltAI:
+	cp $55			; 33.3% chance
+	jp c,AIUseXAttack	; use X ATTACK
+	cp $2B			; 16.7% chance
+	ret nc
+	jp AIUseXDefend		; use X DEFEND
+
+Rival1AI: 
+	cp $20			; 12.5 chance
+	ret nc
+	ld a,5			; if HP < 20%
+	call Func_3a7cf
+	ret nc
+	jp AIUsePotion		; use POTION
+
+ProfOakAI:
+	cp $20			
+	jp c,Func_3a72a		; 12.5% chance to switch out
+	cp $40			
+	ret nc
+	ld a,2			; if HP < 50%
+	call Func_3a7cf
+	ret nc
+	jp Func_3a72a		; 25% chance to switch out
+	cp $80			
+	ret nc
+	ld a,5			; if HP < 20%
+	call Func_3a7cf
+	ret nc
+	jp Func_3a72a		; 50% chance to switch out
+	cp $C0
+	ret nc
+	ld a,4			; if HP < 25%
+	call Func_3a7cf
+	ret nc
+	jp AIUseMaxPotion	; 25% chance to use MAX POTION
+
+ScientistAI:
+	cp $20			; 12.5% chance to use X ATTACK
+	jp c,AIUseXAttack
+	cp $60			; 12.5% chance to use X DEFEND
+	jp c,AIUseXDefend
+	cp $40			; 12.5% chance to use X SPEED
+	jp c,AIUseXSpeed
+	cp $80			; 12.5% chance to use X SPECIAL
+	jp c,AIUseXSpecial
+	cp $C0			; 25% chance
+	ret nc
+	ld a,2			; if HP < 50%
+	call Func_3a7cf
+	ret nc
+	jp AIUseSuperPotion	; use SUPER POTION
 
 GiovanniAI: ; 3a5f5 (e:65f5)
-	cp $40
-	ret nc
-	jp AIUseGuardSpec
-
-CooltrainerMAI: ; 3a5fb (e:65fb)
-	cp $40
-	ret nc
-	jp AIUseXAttack
-
-CooltrainerFAI: ; 3a601 (e:6601)
-	cp $40
-	ld a,$A
+	ld a,3			; if HP < 33%, use HYPER POTION
 	call Func_3a7cf
 	jp c,AIUseHyperPotion
-	ld a,5
+	cp $40			; 25% chance to use GUARD SPEC.
+	jp c,AIUseGuardSpec
+	cp $60			; 12.5% chance to use DIRE HIT
+	jp c,AIUseDireHit
+	cp $80			; 12.5% chance to use X ACCURACY
+	ret nc
+	jp AIUseXAccuracy
+
+RocketAI:
+	cp $20			; 12.5% chance
+	ret nc
+	jp AIUseXAttack		; use X ATTACK
+
+CooltrainerAI: ; 3a5fb (e:65fb)
+	cp $80			; 50% chance
+	ret nc
+	ld a,5			; if HP < 20%
+	call Func_3a7cf
+	jp c,AIUseHyperPotion	; use HYPER POTION
+	ld a,2			; if HP < 50%
 	call Func_3a7cf
 	ret nc
-	jp Func_3a72a
+	jp Func_3a72a		; switch out
 
-BrockAI: ; 3a614 (e:6614)
-; if his active monster has a status condition, use a full heal
+BrunoAI: 
+	cp $10			; 6.25% chance to switch out
+	jp c,Func_3a72a
+	cp $25			; 8.33% chance to use DIRE HIT
+	jp c,AIUseDireHit	
+	cp $50			; 16.67% chance to use X DEFEND
+	jp c,AIUseXDefend	
+	cp $D0			; 50% chance
+	ret nc
+	ld a,5			; if HP < 20%
+	call Func_3a7cf
+	ret nc
+	jp AIUseHyperPotion	; use HYPER POTION
+
+BrockAI:
+	cp $40			; 25% chance to use X ATTACK
+	jp c,AIUseXAttack
+	cp $C0			; 50% chance
+	ret nc
+	ld a, [wEnemyMonStatus] ; if active mon has status ailment
+	and a
+	ret z
+	jp AIUseFullHeal	; use FULL HEAL
+
+MistyAI: ; 3a61c (e:661c)
+	cp $40			; 25% chance
+	ret nc
+	ld a,2			; if HP < 50%
+	call Func_3a7cf
+	ret nc
+	jp AIUseFreshWater	; use FRESH WATER
+
+LtSurgeAI: ; 3a622 (e:6622)
+	cp $40			; 25% chance to use X DEFEND
+	jp c,AIUseXDefend	
+	cp $60			; 12.5% chance to use X SPECIAL
+	jp c,AIUseXSpecial	
+	cp $80			; 12.5% chance to use X EVASION
+	jp c,AIUseXEvasion
+	cp $C0			; 25% chance
+	ret nc
+	ld a,5			; if HP < 33%
+	call Func_3a7cf
+	ret nc
+	jp AIUseSuperPotion	; use SUPER POTION
+
+ErikaAI: ; 3a628 (e:6628)
+	cp $20			; 12.5% chance to use X SPECIAL
+	jp c,AIUseXSpecial	
+	cp $A0			; 50% chance to use an item
+	ld a,5			
+	call Func_3a7cf		
+	jp c,AIUseHyperPotion	; if HP < 20%, use HYPER POTION
+	cp $E0
 	ld a,[wEnemyMonStatus]
 	and a
 	ret z
-	jp AIUseFullHeal
-
-MistyAI: ; 3a61c (e:661c)
-	cp $40
-	ret nc
-	jp AIUseXDefend
-
-LtSurgeAI: ; 3a622 (e:6622)
-	cp $40
-	ret nc
-	jp AIUseXSpeed
-
-ErikaAI: ; 3a628 (e:6628)
-	cp $80
-	ret nc
-	ld a,$A
-	call Func_3a7cf
-	ret nc
-	jp AIUseSuperPotion
+	jp AIUseFullHeal	; if afflicted with status, use FULL HEAL
 
 KogaAI: ; 3a634 (e:6634)
-	cp $40
+	cp $40			; 25% chance to use X EVASION
+	jp c,AIUseXEvasion	
+	cp $60			; 12.5% chance to use X ATTACK
+	jp c,AIUseXAttack	
+	cp $80			; 12.5% chance to use X DEFEND
+	jp c,AIUseXDefend
+	cp $C0			; 25% chance
 	ret nc
-	jp AIUseXAttack
+	ld a,5			; if HP < 20%
+	call Func_3a7cf
+	ret nc
+	jp AIUseHyperPotion	; use HYPER POTION
 
 BlaineAI: ; 3a63a (e:663a)
-	cp $40
+	cp $40			; 25% chance to use X SPECIAL
+	jp c,AIUseXSpecial
+	cp $80			; 25% chance
 	ret nc
-	jp AIUseSuperPotion
+	ld a,5			; if HP < 20%
+	call Func_3a7cf
+	ret nc
+	jp AIUseHyperPotion	; use HYPER POTION
 
 SabrinaAI: ; 3a640 (e:6640)
-	cp $40
+	cp $40			; 25% chance to use X DEFEND
+	jp c,AIUseXDefend
+	cp $80			; 25% chance
 	ret nc
-	ld a,$A
+	ld a,5			; if HP < 20%
 	call Func_3a7cf
 	ret nc
-	jp AIUseHyperPotion
+	jp AIUseFullRestore	; use FULL RESTORE
 
-Sony2AI: ; 3a64c (e:664c)
-	cp $20
+GentlemanAI: 
+	cp $20			; 12.5% chance
+	ret nc
+	ld a,5			; if HP < 20%
+	call Func_3a7cf
+	ret nc
+	jp AIUseFullRestore	; use FULL RESTORE
+
+Rival2AI: ; 3a64c (e:664c)
+	cp $40			; 25% chance
+	ret nc
+	ld a,3			; if HP < 33%
+	call Func_3a7cf
+	ret nc
+	jp AIUseSuperPotion	; use SUPER POTION
+
+Rival3AI: ; 3a658 (e:6658)
+	cp $10			; 6.25% chance
+	jp c,Func_3a72a		; switch out
+	cp $50			; 25% chance
 	ret nc
 	ld a,5
 	call Func_3a7cf
-	ret nc
-	jp AIUsePotion
-
-Sony3AI: ; 3a658 (e:6658)
-	cp $20
-	ret nc
-	ld a,5
+	jp c,AIUseFullRestore	; if HP < 20%, use FULL RESTORE
+	ld a,3
 	call Func_3a7cf
 	ret nc
-	jp AIUseFullRestore
+	jp AIUseHyperPotion	; if HP < 33%, use HYPER POTION
 
 LoreleiAI: ; 3a664 (e:6664)
-	cp $80
+	cp $10			; 6.25% chance to switch out
+	jp c,Func_3a72a	
+	cp $90			; 50% chance
 	ret nc
 	ld a,5
 	call Func_3a7cf
+	jp c,AIUseFullRestore	; if HP < 20%, use FULL RESTORE
+	ld a,3
+	call Func_3a7cf
 	ret nc
-	jp AIUseSuperPotion
-
-BrunoAI: ; 3a670 (e:6670)
-	cp $40
-	ret nc
-	jp AIUseXDefend
+	jp AIUseHyperPotion	; if HP < 33%, use HYPER POTION
 
 AgathaAI: ; 3a676 (e:6676)
-	cp $14
+	cp $20			; 12.5% chance to switch out
 	jp c,Func_3a72a
-	cp $80
+	cp $80			; 37.5% chance
 	ret nc
-	ld a,4
+	ld a,3			; if HP < 33%
 	call Func_3a7cf
 	ret nc
-	jp AIUseSuperPotion
+	jp AIUseHyperPotion	; use HYPER POTION
 
 LanceAI: ; 3a687 (e:6687)
-	cp $80
+	cp $10			; 6.25% chance to switch out
+	jp c,Func_3a72a	
+	cp $30			; 12.5% chance to use X AGILITY
+	jp c,AIUseXAgility
+	cp $50			; 12.5% chance to use X BARRIER
+	jp c,AIUseXBarrier
+	cp $D0			; 50% chance
 	ret nc
-	ld a,5
+	ld a,5			; if HP < 20%
 	call Func_3a7cf
 	ret nc
-	jp AIUseHyperPotion
+	jp AIUseMaxPotion	; use MAX POTION
+
+DreamRedAI:
+	cp $40			; 25% chance to switch out
+	jp c,Func_3a72a
+	cp $80			; 25% chance to use an HP-restoring item
+	ld a,5			
+	call Func_3a7cf		
+	jp c,AIUseFullRestore	; if HP < 20%, use FULL RESTORE
+	ld a,4			
+	call Func_3a7cf		
+	jp c,AIUseMaxPotion	; if HP < 25%, use MAX POTION
+	ld a,3			
+	call Func_3a7cf		
+	jp c,AIUseHyperPotion	; if HP < 33%, use HYPER POTION
+	ld a,2			
+	call Func_3a7cf		
+	jp c,AIUseSuperPotion	; if HP < 50%, use SUPER POTION
+	ld a,1			
+	call Func_3a7cf
+	ret nc	
+	jp AIUsePotion		; if HP < 100%, use POTION
+
+LeaguePCAI:
+	cp $10			; 6.25% chance to use X ATTACK
+	jp c,AIUseXAttack
+	cp $20			; 6.25% chance to use X DEFEND
+	jp c,AIUseXDefend
+	cp $30			; 6.25% chance to use X SPEED
+	jp c,AIUseXSpeed
+	cp $40			; 6.25% chance to use X SPECIAL
+	jp c,AIUseXSpecial
+	cp $80			; 25% chance to use an item
+	ld a,5
+	call Func_3a7cf
+	jp c,AIUseFullRestore	; if HP < 20%, use FULL RESTORE
+	ld a,3
+	call Func_3a7cf
+	ret nc
+	jp AIUseHyperPotion	; if HP < 50%, use HYPER POTION
 
 GenericAI: ; 3a693 (e:6693)
 	and a ; clear carry
@@ -1145,23 +1429,48 @@ AIUseFullRestore: ; 3a6a0 (e:66a0)
 	ld [wEnemyMonHP],a
 	jr Func_3a718
 
-AIUsePotion: ; 3a6ca (e:66ca)
-; enemy trainer heals his monster with a potion
+AIUsePotion:
 	ld a,POTION
 	ld b,20
 	jr AIRecoverHP
 
-AIUseSuperPotion: ; 3a6d0 (e:66d0)
-; enemy trainer heals his monster with a super potion
+AIUseSuperPotion:
 	ld a,SUPER_POTION
+	ld b,60
+	jr AIRecoverHP
+
+AIUseHyperPotion:
+	ld a,HYPER_POTION
+	ld b,120
+	jr AIRecoverHP
+
+AIUseFreshWater:
+	ld a,FRESH_WATER
 	ld b,50
 	jr AIRecoverHP
 
-AIUseHyperPotion: ; 3a6d6 (e:66d6)
-; enemy trainer heals his monster with a hyper potion
-	ld a,HYPER_POTION
-	ld b,200
-	; fallthrough
+AIUseMaxPotion:
+	ld a,MAX_POTION
+	ld [wcf05],a
+	ld de,wHPBarOldHP
+	ld hl,wEnemyMonHP + 1
+	ld a,[hld]
+	ld [de],a
+	inc de
+	ld a,[hl]
+	ld [de],a
+	inc de
+	ld hl,wEnemyMonMaxHP + 1
+	ld a,[hld]
+	ld [de],a
+	inc de
+	ld [wHPBarMaxHP],a
+	ld [wEnemyMonHP + 1],a
+	ld a,[hl]
+	ld [de],a
+	ld [wHPBarMaxHP+1],a
+	ld [wEnemyMonHP],a
+	jr Func_3a718
 
 AIRecoverHP: ; 3a6da (e:66da)
 ; heal b HP and print "trainer used $(a) on pokemon!"
@@ -1302,12 +1611,12 @@ AIUseXAccuracy: ; 0x3a7a8 unused
 
 AIUseGuardSpec: ; 3a7b5 (e:67b5)
 	call Func_3a69b
-	ld hl,W_ENEMYBATTSTATUS2
+	ld hl,W_ENEMYBATTSTATUS3
 	set 1,[hl]
 	ld a,GUARD_SPEC_
 	jp AIPrintItemUse
 
-AIUseDireHit: ; 0x3a7c2 unused
+AIUseDireHit: ; 0x3a7c2
 	call Func_3a69b
 	ld hl,W_ENEMYBATTSTATUS2
 	set 2,[hl]
@@ -1339,25 +1648,40 @@ Func_3a7cf: ; 3a7cf (e:67cf)
 	sub c
 	ret
 
-AIUseXAttack: ; 3a7f2 (e:67f2)
+AIUseXAttack:
 	ld b,$A
 	ld a,X_ATTACK
 	jr AIIncreaseStat
 
-AIUseXDefend: ; 3a7f8 (e:67f8)
+AIUseXDefend:
 	ld b,$B
 	ld a,X_DEFEND
 	jr AIIncreaseStat
 
-AIUseXSpeed: ; 3a7fe (e:67fe)
+AIUseXSpeed:
 	ld b,$C
 	ld a,X_SPEED
 	jr AIIncreaseStat
 
-AIUseXSpecial: ; 3a804 (e:6804)
+AIUseXSpecial:
 	ld b,$D
 	ld a,X_SPECIAL
-	; fallthrough
+	jr AIIncreaseStat
+
+AIUseXEvasion:
+	ld b,$F
+	ld a,X_EVASION
+	jr AIIncreaseStat
+
+AIUseXBarrier:
+	ld b,$33
+	ld a,X_BARRIER
+	jr AIIncreaseStat
+
+AIUseXAgility:
+	ld b,$34
+	ld a,X_AGILITY
+	jr AIIncreaseStat
 
 AIIncreaseStat: ; 3a808 (e:6808)
 	ld [wcf05],a
