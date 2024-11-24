@@ -88,10 +88,10 @@ Func_213c8:: ; 213c8 (8:53c8)
 	ld [H_AUTOBGTRANSFERENABLED], a ; $ffba
 	ret
 
-SomeonesPCText:   db "SOMEONE's PC@"
-BillsPCText:      db "BILL's PC@"
-PlayersPCText:    db "'s PC@"
-OaksPCText:       db "PROF.OAK's PC@"
+SomeonesPCText:   db $4a, "STORAGE@"
+BillsPCText:      db $4a, "STORAGE@"
+PlayersPCText:    db "ITEM STORAGE@"
+OaksPCText:       db "#DEX RATING@"
 PKMNLeaguePCText: db $4a, "LEAGUE@"
 LogOffPCText:     db "LOG OFF@"
 
@@ -371,7 +371,7 @@ ENDC
 	db "@"
 
 BoxNoPCText: ; 21713 (8:5713)
-	db "BOX No.@"
+	db "BOX NO.@"
 
 Func_2171b:: ; 2171b (8:571b)
 	ld hl, wPartyMon1Moves
@@ -521,10 +521,6 @@ ReleaseWhichMonText: ; 0x21816
 
 OnceReleasedText: ; 0x2181b
 	TX_FAR _OnceReleasedText
-	db "@"
-
-AreYouREALLYSureText:
-	TX_FAR _AreYouREALLYSureText
 	db "@"
 
 MonWasReleasedText: ; 0x21820
