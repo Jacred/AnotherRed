@@ -82,7 +82,7 @@ CredWatanabe: ; 74387 (1d:4387)
 CredMasuda: ; 74399 (1d:4399)
 	db -6, "JUNICHI MASUDA@"
 CredNisino: ; 743a9 (1d:43a9)
-	db -5, "KOHJI NISINO@"
+	db -5, "KOJI NISHINO@"
 CredSugimori: ; 743b7 (1d:43b7)
 	db -5, "KEN SUGIMORI@"
 CredNishida: ; 743c5 (1d:43c5)
