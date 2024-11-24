@@ -11,7 +11,7 @@ _IntroducePlayerGender::
 	done
 
 _IntroducePlayerName::
-	text "Next, what is"
+	text "Second, what is"
 	line "your name?"
 	prompt
 	
@@ -21,7 +21,7 @@ _ConfirmBoyText::
 	done
 
 _ConfirmGirlText::
-	text "So, you're a girl."
+	text "So, you're a girl?"
 	line "Is that right?"
 	done
 
@@ -84,10 +84,12 @@ _OakPreBattleText::
 _OakVictorySpeech::
 	text "Wow!"
 	line "I'm speechless!"
+
+	para "That made me feel"
+	line "40 years younger!"
 	
-	para "I guess you're as"
-	line "good as they say"
-	cont "you are!"
+	para "You really are a"
+	line "#MON MASTER!"
 	prompt
 	
 _BattleTentSignText::
@@ -273,8 +275,8 @@ _HallofFameRoomText1_tehurn::
 	cont "now that you're"
 	cont "the very best?"
 
-	para "…………"
-	line "…………"
+	para "………………"
+	line "………………"
 
 	para "Hmmm... I see..."
 	line "Is that so?"
