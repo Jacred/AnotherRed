@@ -650,8 +650,7 @@ HandlePoisonBurnLeechSeed_DecreaseOwnHP: ; 3c43d (f:443d)
 	rr c
 	srl b
 	rr c
-	srl c
-	srl c         ; c = max HP/16 (assumption: HP < 1024)
+	srl c         ; c = max HP/8 (assumption: HP < 1024)
 	ld a, c
 	and a
 	jr nz, .nonZeroDamage
@@ -667,6 +666,12 @@ HandlePoisonBurnLeechSeed_DecreaseOwnHP: ; 3c43d (f:443d)
 .playersTurn
 	bit 0, [hl]
 	jr z, .noToxic
+	srl c         ; c = max HP/16 (assumption: HP < 1024)
+	ld a, c
+	and a
+	jr nz, .nonZeroDamageAgain
+	inc c
+.nonZeroDamageAgain
 	ld a, [de]    ; increment toxic counter
 	inc a
 	ld [de], a
@@ -4605,13 +4610,10 @@ Func_3e016: ; 3e016 (f:6016)
 
 UnusedHighCriticalMoves: ; 3e01e (f:601e)
 	db KARATE_CHOP
+	db RAZOR_WIND
 	db RAZOR_LEAF
 	db CRABHAMMER
 	db SLASH
-	db GUILLOTINE
-	db HORN_DRILL
-	db FISSURE
-	db RAZOR_WIND
 	db $FF
 ; 3e023
 
@@ -4688,13 +4690,10 @@ CriticalHitTest: ; 3e023 (f:6023)
 ; high critical hit moves
 HighCriticalMoves: ; 3e08e (f:608e)
 	db KARATE_CHOP
+	db RAZOR_WIND
 	db RAZOR_LEAF
 	db CRABHAMMER
 	db SLASH
-	db GUILLOTINE
-	db HORN_DRILL
-	db FISSURE
-	db RAZOR_WIND
 	db $FF
 
 
@@ -4793,7 +4792,7 @@ ApplyAttackToEnemyPokemon: ; 3e0df (f:60df)
 	ld a,[W_PLAYERMOVENUM]
 	cp a,SEISMIC_TOSS
 	jr z,.storeDamage
-	cp a,NIGHT_SHADE
+	cp a,PSYWAVE
 	jr z,.storeDamage
 	ld b,SONICBOOM_DAMAGE
 	cp a,SONICBOOM
