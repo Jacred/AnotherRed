@@ -943,7 +943,7 @@ ItemUseMedicine: ; dabb (3:5abb)
 .notUsingSoftboiled2
 	ld a,[wcf91]
 	cp a,SODA_POP
-	ld b,60 ; Soda Pop heal amount
+	ld b,70 ; Soda Pop heal amount
 	jr z,.addHealAmount
 	ld b,80 ; Lemonade heal amount
 	jr nc,.addHealAmount
@@ -951,9 +951,9 @@ ItemUseMedicine: ; dabb (3:5abb)
 	ld b,50 ; Fresh Water heal amount
 	jr z,.addHealAmount
 	cp a,SUPER_POTION
-	ld b,200 ; Hyper Potion heal amount
+	ld b,120 ; Hyper Potion heal amount
 	jr c,.addHealAmount
-	ld b,50 ; Super Potion heal amount
+	ld b,60 ; Super Potion heal amount
 	jr z,.addHealAmount
 	ld b,20 ; Potion heal amount
 .addHealAmount
