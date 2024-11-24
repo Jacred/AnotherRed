@@ -2,24 +2,6 @@ EvolveTradeMon: ; 17d7d (5:7d7d)
 ; Verify the TradeMon's species name before
 ; attempting to initiate a trade evolution.
 
-; The names of the trade evolutions in Blue (JP)
-; are checked. In that version, TradeMons that
-; can evolve are Graveler and Haunter.
-
-; In localization, this check was translated
-; before monster names were finalized.
-; Then, Haunter's name was "Spectre".
-; Since its name no longer starts with
-; "SP", it is prevented from evolving.
-
-; This may have been why Red/Green's trades
-; were used instead, where none can evolve.
-
-; This was fixed in Yellow.
-
-; This was changed for the hack, fixed in Patch 3.3
-; rip that kadabra won't evolve :(
-
 	ld a, [wTradeMonNick]
 	
 	; GRAVELER -> GOLEM
@@ -30,8 +12,8 @@ EvolveTradeMon: ; 17d7d (5:7d7d)
 	cp "H"
 	jr z, .ok
 	
-	; KADABRA -> ALAKAZAM
-	cp "K"
+	; SLOWPOKE -> SLOWBRO
+	cp "S"
 	jr z, .ok
 	
 	; MACHOKE -> MACHAMP
