@@ -80,7 +80,7 @@ RockTunnelName: ; 71606 (1c:5606)
 SeaCottageName: ; 71612 (1c:5612)
 	db "SEA COTTAGE@"
 SSAnneName: ; 7161e (1c:561e)
-	db "S.S.ANNE@"
+	db "ST.ANNE@"
 PokemonLeagueName: ; 71627 (1c:5627)
 	db "#MON LEAGUE@"
 UndergroundPathName: ; 71633 (1c:5633)
@@ -94,7 +94,7 @@ VictoryRoadName: ; 7165f (1c:565f)
 DiglettsCaveName: ; 7166c (1c:566c)
 	db "DIGLETT's CAVE@"
 RocketHQName: ; 7167a (1c:567a)
-	db "ROCKET HQ@"
+	db "ROCKET HIDEOUT@"
 SilphCoName: ; 71684 (1c:5684)
 	db "SILPH CO.@"
 PokemonMansionName: ; 7168e (1c:568e)
@@ -102,12 +102,12 @@ PokemonMansionName: ; 7168e (1c:568e)
 SafariZoneName: ; 71698 (1c:5698)
 	db "SAFARI ZONE@"
 CeruleanCaveName: ; 716a4 (1c:56a4)
-	db "CERULEAN CAVE@"
+	db "UNKNOWN DUNGEON@"
 PowerPlantName: ; 716b2 (1c:56b2)
 	db "POWER PLANT@"
 MtSilverName:
 	db "???@"
 LastIslandName:
-	db "UNKNOWN ISLAND@"
+	db "FARAWAY ISLAND@"
 BattleTentName:
 	db "BATTLE TENT@"
