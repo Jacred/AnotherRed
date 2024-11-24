@@ -3992,34 +3992,30 @@ CheckForDisobedience: ; 3dc88 (f:5c88)
 	ret
 ; compare the mon's original trainer ID with the player's ID to see if it was traded
 .checkIfMonIsTraded
-	ld hl, wPartyMon1OTID
-	ld bc, wPartyMon2 - wPartyMon1
-	ld a, [wPlayerMonNumber]
-	call AddNTimes
-	ld a, [wPlayerID]
-	cp [hl]
-	jr nz, .monIsTraded
-	inc hl
-	ld a, [wPlayerID + 1]
-	cp [hl]
-	jp z, .canUseMove
-; it was traded
-.monIsTraded
 ; what level might disobey?
 	ld hl, W_OBTAINEDBADGES
 	bit 7, [hl]
 	ld a, 101
 	jr nz, .next
-	bit 5, [hl]
-	ld a, 70
+	bit 6, [hl]
+	ld a, 80	; L75
+	jr nz, .next
+	bit 4, [hl]
+	ld a, 70	; L69
 	jr nz, .next
 	bit 3, [hl]
-	ld a, 50
+	ld a, 60	; L56
+	jr nz, .next
+	bit 2, [hl]
+	ld a, 50	; L42
 	jr nz, .next
 	bit 1, [hl]
-	ld a, 30
+	ld a, 40	; L35
 	jr nz, .next
-	ld a, 10
+	bit 0, [hl]
+	ld a, 30	; L26
+	jr nz, .next
+	ld a, 20	; L16
 .next
 	ld b, a
 	ld c, a
