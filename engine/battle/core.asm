@@ -4608,6 +4608,10 @@ UnusedHighCriticalMoves: ; 3e01e (f:601e)
 	db RAZOR_LEAF
 	db CRABHAMMER
 	db SLASH
+	db GUILLOTINE
+	db HORN_DRILL
+	db FISSURE
+	db RAZOR_WIND
 	db $FF
 ; 3e023
 
@@ -4627,7 +4631,6 @@ CriticalHitTest: ; 3e023 (f:6023)
 	call GetMonHeader
 	ld a, [W_MONHBASESPEED]
 	ld b, a
-	srl b                        ; (effective (base speed/2))
 	ld a, [H_WHOSETURN]
 	and a
 	ld hl, W_PLAYERMOVEPOWER
@@ -4641,18 +4644,7 @@ CriticalHitTest: ; 3e023 (f:6023)
 	ret z                        ; do nothing if zero
 	dec hl
 	ld c, [hl]                   ; read move id
-	ld a, [de]
-	bit 2, a                     ; test for focus energy
-	jr nz, .focusEnergyUsed      ; bug: using focus energy causes a shift to the right instead of left,
-	                             ; resulting in 1/4 the usual crit chance
-	sla b                        ; (effective (base speed/2)*2)
-	jr nc, .noFocusEnergyUsed
-	ld b, $ff                    ; cap at 255/256
-	jr .noFocusEnergyUsed
-.focusEnergyUsed
-	srl b
-.noFocusEnergyUsed
-	ld hl, HighCriticalMoves      ; table of high critical hit moves
+	ld hl, HighCriticalMoves     ; table of high critical hit moves
 .Loop
 	ld a, [hli]                  ; read move from move table
 	cp c                         ; does it match the move about to be used?
@@ -4670,6 +4662,19 @@ CriticalHitTest: ; 3e023 (f:6023)
 	jr nc, .SkipHighCritical
 	ld b, $ff
 .SkipHighCritical
+	ld a, [de]
+	bit 2, a                     ; test for focus energy
+	jr z, .noFocusEnergyUsed      ; bug: using focus energy causes a shift to the right instead of left,
+	                             ; resulting in 1/4 the usual crit chance
+	sla b                        ; (effective (base speed*2)
+	jr nc, .focusEnergyUsed
+	ld b, $ff                    ; cap at 255/256
+	jr .noFocusEnergyUsed
+.focusEnergyUsed
+	sla b
+	jr nc, .noFocusEnergyUsed
+	ld b, $ff
+.noFocusEnergyUsed
 	call BattleRandom          ; generates a random value, in "a"
 	rlc a
 	rlc a
@@ -4686,6 +4691,10 @@ HighCriticalMoves: ; 3e08e (f:608e)
 	db RAZOR_LEAF
 	db CRABHAMMER
 	db SLASH
+	db GUILLOTINE
+	db HORN_DRILL
+	db FISSURE
+	db RAZOR_WIND
 	db $FF
 
 
@@ -7869,7 +7878,7 @@ StatsTextStrings: ; 3f69f (f:769f)
 	db "SPEED@"
 	db "SPECIAL@"
 	db "ACCURACY@"
-	db "EVADE@"
+	db "EVASION@"
 
 StatModifierRatios: ; 3f6cb (f:76cb)
 ; first byte is numerator, second byte is denominator
