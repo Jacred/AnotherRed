@@ -1,14 +1,14 @@
 Route2Mons:
 	db $19
-	db 5,POLIWAG
-	db 6,JIGGLYPUFF
-	db 5,EKANS
-	db 6,NIDORAN_F
-	db 5,NIDORAN_M
-	db 5,GRIMER
-	db 6,RATTATA
-	db 5,CHARMANDER
-	db 5,SQUIRTLE
-	db 5,BULBASAUR
+	db 4,RATTATA    ; 35% Rattata
+	db 4,PIDGEY     ; 35% Pidgey
+	db 5,RATTATA    ; 10% Nidoran-M
+	db 6,NIDORAN_M  ; 10% Nidoran-F
+	db 6,NIDORAN_F  ; 5% Caterpie
+	db 5,PIDGEY     ; 5% Weedle
+	db 5,WEEDLE
+	db 5,CATERPIE
+	db 7,PIDGEY
+	db 7,PIDGEY
 	db $00
 
