@@ -1,14 +1,14 @@
 Route22Mons:
 	db $19
-	db 5,ODDISH
-	db 5,NIDORAN_M
-	db 5,EKANS
-	db 5,KOFFING
-	db 5,GRIMER
-	db 5,VULPIX
-	db 5,SPEAROW
-	db 5,DODUO
-	db 5,PIKACHU
-	db 5,NIDORAN_F
+	db 4,NIDORAN_M  ; 30% Rattata
+	db 4,NIDORAN_F  ; 25% Nidoran-M
+	db 4,RATTATA    ; 25% Nidoran-F
+	db 5,SPEAROW    ; 10% Spearow
+	db 5,MANKEY     ; 10% Mankey
+	db 4,RATTATA
+	db 4,NIDORAN_M
+	db 4,NIDORAN_F
+	db 4,RATTATA
+	db 4,RATTATA
 	db $00
 
