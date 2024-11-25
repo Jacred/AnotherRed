@@ -1,5 +1,5 @@
 ForestMons:
-	db $08
+	db $19
 	db 5,CATERPIE  ; 40% Caterpie
 	db 5,WEEDLE    ; 20% Weedle
 	db 6,PIDGEY    ; 19% Pidgey
