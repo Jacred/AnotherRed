@@ -1,5 +1,5 @@
 TowerMons7:
-	db $0f
+	db $14
 	db 38,GASTLY   ; 65% Gastly
 	db 38,GASTLY   ; 20% Haunter
 	db 38,GASTLY   ; 15% Cubone
