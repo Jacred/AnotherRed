@@ -8,7 +8,7 @@ TowerMons5:
 	db 41,HAUNTER
 	db 37,CUBONE
 	db 37,CUBONE
-	db 38,CUBONE
+	db 37,CUBONE
 	db 36,GASTLY
 	db $00
 
