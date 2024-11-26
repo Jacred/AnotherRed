@@ -1,14 +1,14 @@
 TowerMons6:
 	db $0F
-	db 55,HAUNTER
-	db 55,MAROWAK
-	db 55,ARBOK
-	db 55,MUK
-	db 55,GASTLY
-	db 55,HAUNTER
-	db 55,HAUNTER
-	db 55,CUBONE
-	db 57,WEEZING
-	db 57,GENGAR
+	db 37,GASTLY   ; 75% Gastly
+	db 37,GASTLY   ; 14% Cubone
+	db 37,GASTLY   ; 11% Haunter
+	db 37,GASTLY
+	db 37,GASTLY
+	db 40,HAUNTER
+	db 38,CUBONE
+	db 38,CUBONE
+	db 40,CUBONE
+	db 42,HAUNTER
 	db $00
 
