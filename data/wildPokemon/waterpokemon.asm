@@ -1,25 +1,25 @@
 WaterMons:
 	db $05 ; Old Man glitch prevention
-	db 50,TENTACOOL
-	db 50,TENTACRUEL
-	db 50,GOLDUCK
-	db 50,STARMIE
-	db 50,SEADRA
-	db 60,MAGIKARP
-	db 50,GYARADOS
-	db 50,DEWGONG
-	db 50,SLOWPOKE
-	db 50,TENTACOOL
+	db 30,DRATINI   ; 25% Dratini
+	db 30,KRABBY    ; 25% Krabby
+	db 30,PSYDUCK   ; 25% Psyduck
+	db 30,SLOWPOKE  ; 25% Slowpoke
+	db 30,PSYDUCK
+	db 30,SLOWPOKE
+	db 30,DRATINI
+	db 30,KRABBY
+	db 30,SLOWPOKE
+	db 30,SLOWPOKE
 
 	db $05
+	db 25,TENTACOOL  ; 70% Tentacool L20-40
+	db 30,TENTACOOL  ; 30% Staryu L30
 	db 20,TENTACOOL
-	db 20,TENTACRUEL
-	db 20,GOLDUCK
-	db 20,STARMIE
-	db 20,SEADRA
-	db 20,MAGIKARP
-	db 20,GYARADOS
-	db 20,DEWGONG
-	db 20,SLOWPOKE
-	db 20,TENTACOOL
+	db 30,STARYU
+	db 35,TENTACOOL
+	db 30,STARYU
+	db 40,TENTACOOL
+	db 30,STARYU
+	db 30,STARYU
+	db 30,STARYU
 
