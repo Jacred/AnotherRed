@@ -1,14 +1,14 @@
 TowerMons3:
 	db $0A
-	db 50,GASTLY
-	db 50,HAUNTER
-	db 50,GASTLY
-	db 50,HAUNTER
-	db 50,GASTLY
-	db 50,HAUNTER
-	db 50,GASTLY
-	db 50,CUBONE
-	db 50,MAROWAK
-	db 50,HAUNTER
+	db 34,GASTLY  ; 85% Gastly
+	db 34,GASTLY  ; 9% Cubone
+	db 34,GASTLY  ; 6% Haunter
+	db 34,GASTLY
+	db 34,GASTLY
+	db 34,GASTLY
+	db 35,CUBONE
+	db 35,HAUNTER
+	db 36,CUBONE
+	db 37,HAUNTER
 	db $00
 
