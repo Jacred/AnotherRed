@@ -1,5 +1,5 @@
 TowerMons5:
-	db $0A
+	db $0F
 	db 36,GASTLY  ; 76% Gastly
 	db 36,GASTLY  ; 14% Cubone
 	db 36,GASTLY  ; 10% Haunter
