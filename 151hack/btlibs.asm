@@ -6,21 +6,21 @@ BTLib1:
 	
 BTLib2:
 	db "go@@@@@"
-	db "do it@@"
+	db "do this"
 	db "battle@"
-	db "rock@@@"
+	db "begin@@"
 	
 BTLib3:
-	db "Oh no@@@@@"
-	db "Argh no@@@"
-	db "Oh well@@@"
-	db "My streak@"
+	db "Incredible"
+	db "No way@@@@"
+	db "I lost@@@@"
+	db "Damn it@@@"
 	
 BTLib4:
-	db "game@@@"
-	db "battle@"
-	db "play@@@"
-	db "job@@@@"
+	db "#MON"
+	db "skills@"
+	db "match@@"
+	db "fight@@"
 
 BTBeforeBattlePtrTable:
 	dw BTBeforeBattleTemplate1
@@ -45,79 +45,83 @@ BTAfterBattlePtrTable:
 BTBeforeBattleTemplate1:
 	text "I'm @"
 	TX_RAM wStringBuffer1
+	text ", so"
+	line "let's @"
+	TX_RAM wStringBuffer2
 	text "!"
 	done
 	
 BTBeforeBattleTemplate2:
-	text "Get @"
+	text "Are you @"
 	TX_RAM wStringBuffer1
-	text "!"
-	done
-	
-BTBeforeBattleTemplate3:
-	text "Let's @"
-	TX_RAM wStringBuffer2
-	text "!"
-	done
-	
-BTBeforeBattleTemplate4:
-	text "I'm @"
-	TX_RAM wStringBuffer1
-	db 0
-	line "for this!"
-	
-	para "Let's @"
-	TX_RAM wStringBuffer2
-	text "!"
-	done
-	
-BTBeforeBattleTemplate5:
-	text "Here I come!"
-	
+	text "?"
 	line "Let's @"
 	TX_RAM wStringBuffer2
 	text "!"
 	done
 	
-BTBeforeBattleTemplate6:
-	text "Let's @"
+BTBeforeBattleTemplate3:
+	text "Hey, let's @"
 	TX_RAM wStringBuffer2
-	db 0
-	line "together!"
+	text "!"
+	line "Get @"
+	TX_RAM wStringBuffer1
+	text "now!"
 	done
-
-BTBeforeBattleTemplate7:
-	text "I'm waiting for"
-	line "a while now."
 	
-	para "Let's @"
+BTBeforeBattleTemplate4:
+	text "I hope you're"
+	line "@"
+	TX_RAM wStringBuffer1
+	text "!"
+	done
+	
+BTBeforeBattleTemplate5:
+	text "You'd better be"
+	line "@"
+	TX_RAM wStringBuffer1
+	text "!"
+	done
+	
+BTBeforeBattleTemplate6:
+	text "OK! It's time for"
+	line "us to @"
 	TX_RAM wStringBuffer2
 	text "!"
 	done
 
-BTBeforeBattleTemplate8:
-	text "Well, I'm"
-	line "@"
-	TX_RAM wStringBuffer1
-	text " now."
-	
-	para "Let's @"
+BTBeforeBattleTemplate7:
+	text "I've been waiting!"
+	line "Let's @"
 	TX_RAM wStringBuffer2
-	text "."
+	text "now!"
+	done
+
+BTBeforeBattleTemplate8:
+	text "Time to  @"
+	TX_RAM wStringBuffer2
+	text "!"
+	line "Are you  @"
+	TX_RAM wStringBuffer1
+	text "?"
 	done
 	
 BTAfterBattleTemplate1:
 	text "@"
 	TX_RAM wStringBuffer1
 	text "!"
-	
-	para "Oh man.."
+	line "Good @"
+	TX_RAM wStringBuffer2
+	text "..."
 	prompt
 	
 BTAfterBattleTemplate2:
-	text "@"
+	text "No!@"
 	TX_RAM wStringBuffer1
-	text "!"
+	text "..."
+	line " @"
+	TX_RAM wStringBuffer2
+	text "..."
 	prompt
 	
 BTAfterBattleTemplate3:
@@ -138,11 +142,8 @@ BTAfterBattleTemplate4:
 	prompt
 	
 BTAfterBattleTemplate5:
-	text "I did the best"
-	line "I could."
-	
-	para "I have no"
-	line "regrets!"
+	text "I did my best, I"
+	line "have no regrets!"
 	prompt
 
 BTAfterBattleTemplate6:
@@ -150,25 +151,22 @@ BTAfterBattleTemplate6:
 	TX_RAM wStringBuffer1
 	text "!"
 	
-	line "Nice @"
+	line "...Good @"
 	TX_RAM wStringBuffer2
 	text "!"
 	prompt
 	
 BTAfterBattleTemplate7:
-	text "That was a nice"
-	line "@"
+	text "That was a pretty"
+	line "good @"
 	TX_RAM wStringBuffer2
-	text ","
-	cont "don't you think?"
+	text "!"
+	cont "Don't you think?"
 	prompt
 	
 BTAfterBattleTemplate8:
-	text "Awesome"
-	line "@"
+	text "Hey! Thanks for"
+	line "the great battle!@"
 	TX_RAM wStringBuffer2
 	text "!"
-	
-	para "Shall we do this"
-	line "again?"
 	prompt
