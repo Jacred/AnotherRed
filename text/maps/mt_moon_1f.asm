@@ -1,7 +1,9 @@
 _MtMoon1BattleText2:: ; 80692 (20:4692)
-	text "WHOA! You shocked"
-	line "me! Oh, you're"
-	cont "just a kid!"
+	text "WHOA!"
+	line "You shocked me!"
+
+	para "Oh, you're just a"
+	line "kid!"
 	done
 
 _MtMoon1EndBattleText2:: ; 806bf (20:46bf)
@@ -108,16 +110,15 @@ _MtMoon1EndBattleText8:: ; 808f8 (20:48f8)
 
 _MtMoon1AfterBattleText8:: ; 80901 (20:4901)
 	text "ZUBAT is tough!"
-	line "But, it can be"
-	cont "useful if you"
+
+	para "But, it can be"
+	line "useful if you"
 	cont "catch one."
 	done
 
 _MtMoon1Text14:: ; 8093a (20:493a)
-	text "Beware! ZUBAT is"
-IF DEF(_YELLOW)
+	text "TRAINER TIPS"
+
+	para "Beware! ZUBAT is"
 	line "a bloodsucker!"
-ELSE
-	line "a blood sucker!"
-ENDC
 	done
